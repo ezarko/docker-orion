@@ -1,15 +1,16 @@
 FROM java:6-jre
 
-RUN useradd -ms /bin/bash orion
+ARG BUILD=R-11.0-201602232219
+ARG FILE=eclipse-orion-11.0-linux.gtk.x86_64.zip
 
-ADD http://www.eclipse.org/downloads/download.php?file=/orion/drops/R-11.0-201602232219/eclipse-orion-11.0-linux.gtk.x86_64.zip&mirror_id=1 /home/orion/
-RUN chown -R orion:orion /home/orion
+RUN useradd -ms /bin/bash orion
 
 USER orion
 ENV HOME /home/orion
 WORKDIR $HOME
 
-RUN unzip eclipse-orion-11.0-linux.gtk.x86_64.zip
-RUN rm eclipse-orion-11.0-linux.gtk.x86_64.zip
+RUN curl -o $FILE http://download.eclipse.org/orion/drops/$BUILD/$FILE && unzip $FILE && rm $FILE
+
+EXPOSE 8080
 
 CMD eclipse/orion
