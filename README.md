@@ -22,3 +22,6 @@ You can run Orion in Docker using this command
 docker run -d --name orion -p 8080:8080 ezarko/orion
 ```
 
+## Supported tags and respective Dockerfile links
+
+* `R-11.0-201602232219`, `11.0`, `11`, `latest` [Dockerfile](https://github.com/ezarko/docker-orion/blob/0eca72eaa8874fed3f279f1d67061bc067a37b38/Dockerfile)
