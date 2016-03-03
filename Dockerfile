@@ -1,7 +1,7 @@
 FROM java:6-jre
 
-ARG BUILD=R-11.0-201602232219
-ARG FILE=eclipse-orion-11.0-linux.gtk.x86_64.zip
+ARG BUILD=S20151119-1459
+ARG FILE=eclipse-orion-10.0.0S1-linux.gtk.x86_64.zip
 
 RUN useradd -ms /bin/bash orion
 
