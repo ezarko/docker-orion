@@ -12,5 +12,6 @@ WORKDIR $HOME
 RUN curl -o $FILE http://download.eclipse.org/orion/drops/$BUILD/$FILE && unzip $FILE && rm $FILE
 
 EXPOSE 8080
+VOLUME [ "$HOME/serverworkspace" ]
 
 CMD eclipse/orion
